@@ -18,6 +18,7 @@
 #define BUF_FLUSH -1
 
 /* for command chaining */
+<<<<<<< HEAD
 #define CMD_NORM        0
 #define CMD_OR          1
 #define CMD_AND         2
@@ -26,13 +27,28 @@
 /* for convert_number() */
 #define CONVERT_LOWERCASE       1
 #define CONVERT_UNSIGNED        2
+=======
+#define CMD_NORM	0
+#define CMD_OR		1
+#define CMD_AND		2
+#define CMD_CHAIN	3
+
+/* for convert_number() */
+#define CONVERT_LOWERCASE	1
+#define CONVERT_UNSIGNED	2
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
 
 /* 1 if using system getline() */
 #define USE_GETLINE 0
 #define USE_STRTOK 0
 
+<<<<<<< HEAD
 #define HIST_FILE       ".simple_shell_history"
 #define HIST_MAX        4096
+=======
+#define HIST_FILE	".simple_shell_history"
+#define HIST_MAX	4096
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
 
 extern char **environ;
 
@@ -45,14 +61,24 @@ extern char **environ;
  */
 typedef struct liststr
 {
+<<<<<<< HEAD
         int num;
         char *str;
         struct liststr *next;
+=======
+	int num;
+	char *str;
+	struct liststr *next;
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
 } list_t;
 
 /**
  *struct passinfo - contains pseudo-arguements to pass into a function,
+<<<<<<< HEAD
  *              allowing uniform prototype for function pointer struct
+=======
+ *		allowing uniform prototype for function pointer struct
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
  *@arg: a string generated from getline containing arguements
  *@argv: an array of strings generated from arg
  *@path: a string path for the current command
@@ -74,6 +100,7 @@ typedef struct liststr
  */
 typedef struct passinfo
 {
+<<<<<<< HEAD
         char *arg;
         char **argv;
         char *path;
@@ -93,11 +120,36 @@ typedef struct passinfo
         int cmd_buf_type; /* CMD_type ||, &&, ; */
         int readfd;
         int histcount;
+=======
+	char *arg;
+	char **argv;
+	char *path;
+	int argc;
+	unsigned int line_count;
+	int err_num;
+	int linecount_flag;
+	char *fname;
+	list_t *env;
+	list_t *history;
+	list_t *alias;
+	char **environ;
+	int env_changed;
+	int status;
+
+	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+	int cmd_buf_type; /* CMD_type ||, &&, ; */
+	int readfd;
+	int histcount;
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
 } info_t;
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+<<<<<<< HEAD
         0, 0, 0}
+=======
+	0, 0, 0}
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
 
 /**
  *struct builtin - contains a builtin string and related function
@@ -106,8 +158,13 @@ typedef struct passinfo
  */
 typedef struct builtin
 {
+<<<<<<< HEAD
         char *type;
         int (*func)(info_t *);
+=======
+	char *type;
+	int (*func)(info_t *);
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
 } builtin_table;
 
 
@@ -232,3 +289,7 @@ int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
 
+<<<<<<< HEAD
+=======
+#endif
+>>>>>>> 6cb426687f9fc77b3cced0bac533aac495b382d0
