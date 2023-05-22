@@ -1,9 +1,10 @@
 #include "shell.h"
 
-/* File: getLine.c
-*Authors: Toroitich Tonny
-* Kennedy Oponyo
-*/
+/**
+*File: getLine.c
+ *Team: Tonny Toroitich
+ *Kennedy Oponyo
+ */
 
 /**
  * input_buf - buffers chained commands
@@ -173,4 +174,3 @@ void sigintHandler(__attribute__((unused))int sig_num)
 	_puts("$ ");
 	_putchar(BUF_FLUSH);
 }
-

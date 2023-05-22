@@ -1,9 +1,10 @@
 #include "shell.h"
 
-/* File: getinfo.c
-*Authors: Toroitich Tonny
-* Kennedy Oponyo 
-*/
+/**
+*File: getinfo.c 
+ *Team: Tonny Toroitich
+ *Kennedy Oponyo
+ */
 
 /**
  * clear_info - initializes info_t struct
